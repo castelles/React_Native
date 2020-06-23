@@ -1,0 +1,8 @@
+Criar um container de DB:
+sudo docker run --name node -p 27017:27017 -d mongodb
+
+Iniciar o container:
+sudo docker start node
+
+Na pasta do projeto:
+npm run dev

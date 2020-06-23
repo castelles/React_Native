@@ -1,0 +1,11 @@
+install package 
+npm i -g create-react-native-app
+npm install expo-cli --global
+
+create app
+create-react-native-app ~nome do app~
+expo init ~nome do app~
+
+cd ~nome do app~
+
+npm start

@@ -1,0 +1,57 @@
+<html>
+    <head> <title>Challenge</title>
+        Challenge
+    </head>
+    <body>
+        <script>
+            
+            var endereco = {
+                rua: "Rua dos Pinheiros",
+                numero: 1293,
+                bairro: "Centro",
+                cidade: "São Paulo",
+                uf: "SP"
+            };
+
+            function info(endereco) {
+                var string = "O usuário mora em " + endereco.cidade
+                    + " / " + endereco.uf + ", no bairro " + endereco.bairro
+                    + ", na rua " + " \"" + endereco.rua + "\" com o número " 
+                    + endereco.numero + ".";
+                
+                console.log(string);
+            }
+
+            info(endereco);
+
+            var skills = ["Javascript","reactJS"];
+            console.log(skills.indexOf("reactJS"));
+            console.log(skills.join(", "));
+
+            var usuarios = [  
+                {    
+                    nome: "Diego",    
+                    habilidades: ["Javascript", "ReactJS", "Redux"]  
+                },  
+                {    
+                    nome: "Gabriel",    
+                    habilidades: ["VueJS", "Ruby on Rails", "Elixir"]  
+                }
+            ];
+
+            function returnVector(vector) {
+                var result = "";
+                for (const value of vector) {
+                    result += "O " + value.nome 
+                        + " possui as habilidades: " 
+                        + value.habilidades.join(", ")
+                        +"\n";
+                }
+                console.log(result);
+            }
+
+            returnVector(usuarios);
+
+        </script>
+    </body>
+</html>

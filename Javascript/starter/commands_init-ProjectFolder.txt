@@ -1,0 +1,13 @@
+Inside project folder do the following commands:
+
+yarn init
+yarn add @babel/cli
+yarn add @babel/preset-env
+yarn add @babel/core
+
+Change in package.json 'dependencies' to 'devDependecies':
+yarn add webpack webpack-cli -D
+
+to start development:
+
+yarn dev

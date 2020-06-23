@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <title>Curso Javascript</title>
+    </head>
+    <body>
+        <script>
+           // javascript
+            var nome = "Caio";
+            nome = 2;
+
+            var idade = 23;
+            var peso = 54.3;
+            var humano = true;
+
+            var alunos = ['Diego','Gabriel','Lucas'];
+            var aluno = {
+                nome: 'Diego',
+                idade: 23,
+                peso: 53.4,
+                humano: true
+            };
+
+            console.log(alunos);
+            console.log(alunos[1]);
+            console.log(aluno.peso);
+
+            var x = 10, y = 5;
+            var resultado = x+y;
+
+            x += 3;
+
+            console.log(resultado,x);
+
+            function soma(numero1, numero2) {
+                var resultado = numero1 + numero2;
+                return resultado;
+            }
+            var resultado = soma(3.4,5.5);
+            console.log(resultado);
+
+            function retornaSexo(sexo) {
+                if (sexo == 'M') {
+                    return 'Masculino';
+                } else if (sexo == 'F') {
+                    return 'Feminino';
+                }
+                return 'Outro';
+            }
+
+            console.log(retornaSexo('a'));
+
+            var sexo = 'F', idade = 13;
+            if(sexo !== 'M' || idade >= 18) {
+                console.log('Ok');
+            }
+
+            var novoSexo = 'M';
+
+            var retornoSexo = (novoSexo === 'M') ? 'Masculino':'Feminino';
+            console.log(retornoSexo);
+
+            function exibeHello() {
+                console.log('Hello world');
+            }
+
+            function exibeBye() {
+                console.log('Bye world');
+            }
+
+            setInterval(exibeHello,1000);
+
+            setTimeout(exibeBye,5000);
+
+            for (var i = 0; i <= 100; i++) {
+                console.log(i);
+            }
+            var j = 92183129831;
+            while (j > 50) {
+                //
+                j /= 5;
+                console.log(j);
+            }
+
+
+        </script>
+    </body>
+</html>

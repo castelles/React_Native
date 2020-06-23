@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Curso Javascript</title>
+    </head>
+    <body>
+        <div id="app">
+            <input type="text" name="nome">    
+            <button class="botao"> Adicionar </button>
+            <div class="box"></div>
+        </div>
+        <script>
+            //var inputElement = document.getElementById('nome');
+            //console.log(inputElement);
+
+            //var inputElement = document.querySelector('div#app input');
+            var inputElement = document.querySelector('input[name=nome]');
+            console.log(inputElement);
+
+            var btnElement = document.querySelector('button.botao');
+
+            btnElement.onclick = function() {
+                var text = inputElement.value;
+                alert(text);
+            }
+
+            var linkElement = document.createElement('a');
+            linkElement.setAttribute('href','http://github.com/castelles');
+
+            var textElement = document.createTextNode('Acessar github de Caio');
+            linkElement.appendChild(textElement);
+
+            var container = document.querySelector('div#app');
+            container.appendChild(linkElement);
+
+            var boxElement = document.querySelector('.box');
+            boxElement.style.width = 200;
+            boxElement.style.height = 200;
+            boxElement.style.backgroundColor = '#f00';
+
+        </script>
+    </body>
+</html>
