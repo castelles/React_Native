@@ -4,33 +4,66 @@ import Button from './src/components/Button';
 import Styles from './src/styles/Styles';
 import Display from './src/components/Display';
 
+const initialState = {
+  displayValue: '0',
+  clearDisplay: false,
+  operation: null,
+  values: [0, 0],
+  current: 0,
+};
+
 export default class App extends Component {
   state = {
-    displayValue: '0',
+    ...initialState,
   };
+
+  addDigit = n => {
+    if (n === '.' && this.state.displayValue.includes('.')) {
+      return;
+    }
+    const clearDisplay =
+      this.state.displayValue === '0' || this.state.clearDisplay;
+    const currentValue = clearDisplay ? '' : this.state.displayValue;
+    const displayValue = currentValue + n;
+    this.setState({displayValue, clearDisplay: false});
+
+    if (n !== '.') {
+      const newValue = parseFloat(displayValue);
+      const values = [...this.state.values];
+      values[this.state.current] = newValue;
+      this.setState({values});
+      // console.log(this.state);
+    }
+  };
+
+  clearMemory = () => {
+    this.setState({...initialState});
+  };
+
+  setOperation = operation => {};
 
   render() {
     return (
       <View style={Styles.container}>
         <Display value={this.state.displayValue} />
         <View style={Styles.buttons}>
-          <Button label="AC" />
-          <Button label="/" />
-          <Button label="7" />
-          <Button label="8" />
-          <Button label="9" />
-          <Button label="*" />
-          <Button label="4" />
-          <Button label="5" />
-          <Button label="6" />
-          <Button label="-" />
-          <Button label="1" />
-          <Button label="2" />
-          <Button label="3" />
-          <Button label="+" />
-          <Button label="0" />
-          <Button label="." />
-          <Button label="=" />
+          <Button label="AC" triple onClick={this.clearMemory} />
+          <Button label="/" operation onClick={this.setOperation} />
+          <Button label="7" onClick={this.addDigit} />
+          <Button label="8" onClick={this.addDigit} />
+          <Button label="9" onClick={this.addDigit} />
+          <Button label="*" operation onClick={this.setOperation} />
+          <Button label="4" onClick={this.addDigit} />
+          <Button label="5" onClick={this.addDigit} />
+          <Button label="6" onClick={this.addDigit} />
+          <Button label="-" operation onClick={this.setOperation} />
+          <Button label="1" onClick={this.addDigit} />
+          <Button label="2" onClick={this.addDigit} />
+          <Button label="3" onClick={this.addDigit} />
+          <Button label="+" operation onClick={this.setOperation} />
+          <Button label="0" double onClick={this.addDigit} />
+          <Button label="." onClick={this.addDigit} />
+          <Button label="=" operation onClick={this.setOperation} />
         </View>
       </View>
     );
