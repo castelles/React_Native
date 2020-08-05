@@ -11,6 +11,7 @@ import {
 import params from './src/params';
 import styles from './src/styles/Styles';
 import Field from './src/components/Field';
+import Flag from './src/components/Flag';
 
 class App extends Component {
   render() {
@@ -29,6 +30,8 @@ class App extends Component {
         <Field mined />
         <Field mined opened />
         <Field mined opened exploded/>
+        <Field flagged />
+        <Field flagged opened/>
 
       </View>
     )

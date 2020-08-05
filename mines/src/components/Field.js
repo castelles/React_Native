@@ -17,7 +17,7 @@ export default props => {
     if (opened) styleField.push(Styles.opened);
     if (exploded) styleField.push(Styles.exploded);
     if (flagged) styleField.push(Styles.flagged);
-    if (styleField.length === 1) styleField.push(Styles.regular);
+    if (!opened && !exploded) styleField.push(Styles.regular);
 
     let color = null;
     if (nearMines > 0) {
@@ -33,6 +33,7 @@ export default props => {
             <Text style={[Styles.label, {color: color}]}>{nearMines}</Text> : 
             false}
             {mined && opened ? <Mine /> : false}
+            {flagged && !opened ? <Flag /> : false}
         </View>
     )
 }
